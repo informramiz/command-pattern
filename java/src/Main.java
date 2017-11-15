@@ -15,8 +15,21 @@ public class Main {
         robotController.beep();
 
         System.out.println();
-        System.out.println("Replaying");
+        System.out.println("Replaying.....");
 
+        robotController.replay();
+
+        /*****************************
+         * Let's change target robot
+         */
+        System.out.println("\n\nTarget robot changed....\n");
+        robotController.changeTargetRobot(new Robot());
+        robotController.move();
+        robotController.turn();
+        robotController.beep();
+        
+        System.out.println();
+        System.out.println("Replaying.....");
         robotController.replay();
     }
 }
