@@ -35,7 +35,12 @@ public class RobotControllerRemote {
     }
 
     public void changeTargetRobot(IRobot newRobot) {
+        //clear history as it is no longer valid unless we
+        //add methods to change target receiver in commands as well
+        //which I am not going to do here
+        commandsHistory.clear();
         this.robot = newRobot;
+
         assignCommandsToButtons();
     }
 
