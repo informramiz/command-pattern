@@ -9,9 +9,11 @@
 #include <iostream>
 #include "../sdk/robot.h"
 #include "../remotecontroller/remote_controller.h"
-using namespace std;
+#include "gtest/gtest.h"
 
-int main() {
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+
   Robot robot;
 	RemoteController remote_controller(&robot);
 
@@ -23,5 +25,6 @@ int main() {
 	std::cout << endl << "Replaying commands..." << endl << endl;
 	remote_controller.Replay();
 
-	return 0;
+	return RUN_ALL_TESTS();
+//	return 0;
 }
